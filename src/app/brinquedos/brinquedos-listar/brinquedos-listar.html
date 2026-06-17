@@ -1,1 +1,15 @@
-<p>brinquedos-listar works!</p>
+<h1>Lista de Brinquedos</h1>
+<button routerLink="brinquedos/cadastrar">Cadastrar brinquedo(s)</button>
+<table border="1">
+    <thead></thead>
+    <tbody>
+        @for (brinquedo of brinquedos(); track brinquedo.id) {
+        <tr>
+            <th>Nome</th>
+            <th>Quantidade</th>
+            <th>Preço</th>
+            <th>Marca</th>
+        </tr>
+    }
+    </tbody>
+</table>
