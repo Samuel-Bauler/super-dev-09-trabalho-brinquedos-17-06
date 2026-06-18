@@ -1,28 +1,25 @@
 import { Component, OnInit, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { BrinquedoModel } from '../../models/brinquedo.model';
 
 @Component({
-  selector: 'app-brinquedos-listar',
-  imports: [CommonModule, RouterLink],
-  templateUrl: './brinquedos-listar.html',
-  styleUrl: './brinquedos-listar.scss',
+  selector: 'app-clientes-listar',
+  imports: [RouterLink],
+  templateUrl: './clientes-listar.html',
+  styleUrl: './clientes-listar.scss',
 })
-export class BrinquedosListar {
-  brinquedos = signal<BrinquedoModel[]>([]);
+export class BrinquedosListar implements OnInit {
+  clientes = signal<BrinquedoModel[]>([]);
 
   ngOnInit(): void {
-    this.carregarBrinquedos();
+    this.clientes.set(this.carregarClientesDoLocalStorage());
   }
 
-  carregarBrinquedos(): void {
-    const dadosSalvos = localStorage.getItem('Brinquedos');
-
-    if (dadosSalvos) {
-      this.brinquedos.set(JSON.parse(dadosSalvos));
-    } else {
-      this.brinquedos.set([]);
+  carregarClientesDoLocalStorage(): BrinquedoModel[] {
+    const clientesString = localStorage.getItem("brinquedos");
+    if (clientesString === null) {
+      return [];
     }
+    return JSON.parse(clientesString) as BrinquedoModel[];
   }
 }
