@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BrinquendosCadastrar } from './brinquedos-cadastrar';
+import { BrinquedosCadastrar } from './brinquedos-cadastrar';
 
-describe('BrinquendosCadastrar', () => {
-  let component: BrinquendosCadastrar;
-  let fixture: ComponentFixture<BrinquendosCadastrar>;
+describe('BrinquedosCadastrar', () => {
+  let component: BrinquedosCadastrar;
+  let fixture: ComponentFixture<BrinquedosCadastrar>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BrinquendosCadastrar],
+      imports: [BrinquedosCadastrar],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(BrinquendosCadastrar);
+    fixture = TestBed.createComponent(BrinquedosCadastrar);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

@@ -1,7 +1,6 @@
-
 import { Component, signal } from '@angular/core';
+import { BrinquedoModel } from '../models/brinquedo.model';
 import { FormsModule } from '@angular/forms';
-import { BrinquedoModel } from '../../models/brinquedo.model';
 
 @Component({
   selector: 'app-brinquedos-cadastrar',
@@ -9,7 +8,7 @@ import { BrinquedoModel } from '../../models/brinquedo.model';
   templateUrl: './brinquedos-cadastrar.html',
   styleUrl: './brinquedos-cadastrar.scss',
 })
-export class BrinquedoCadastrar {
+export class BrinquedosCadastrar {
   brinquedo = signal<BrinquedoModel>({
     id: crypto.randomUUID(),
     nome: "",
@@ -29,7 +28,6 @@ export class BrinquedoCadastrar {
   }
 
   carregarBrinquedosDoLocalStorage(): BrinquedoModel[] {
-    debugger
     const brinquedosString = localStorage.getItem("brinquedos");
 
     if (brinquedosString === null) {
