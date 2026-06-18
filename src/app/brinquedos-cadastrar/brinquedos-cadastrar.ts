@@ -25,6 +25,7 @@ export class BrinquedosCadastrar {
     localStorage.setItem("brinquedos", brinquedosString)
 
     alert("Produto cadastro com sucesso");
+    
   }
 
   carregarBrinquedosDoLocalStorage(): BrinquedoModel[] {
