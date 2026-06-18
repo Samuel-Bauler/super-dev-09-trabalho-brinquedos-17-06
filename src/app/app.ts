@@ -5,7 +5,7 @@ import { BrinquedosListar } from './brinquedos/brinquedos-listar/brinquedos-list
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, BrinquedoCadastrar, BrinquedosListar],g
+  imports: [RouterOutlet, BrinquedoCadastrar, BrinquedosListar],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
